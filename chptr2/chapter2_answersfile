@@ -1,0 +1,288 @@
+
+git init
+Reinitialized existing Git repository in /home/ubuntu01/Documents/stuff/.git/
+
+/======================================================================================/
+
+commit -m 'initialize project version'
+
+/======================================================================================/
+
+git status
+On branch master
+nothing to commit, working directory clean
+
+/======================================================================================/
+
+echo 'My Project' > README
+git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+    README
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+/======================================================================================/
+
+git add README
+
+/======================================================================================/
+
+git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+    new file:   README
+
+/======================================================================================/
+
+nano CONTRIBUTING.md
+
+/======================================================================================/
+
+git add CONTRIBUTING.md
+
+/======================================================================================/
+
+git status -s
+A  CONTRIBUTING.md
+A  README
+ M chptr1/README
+?? chptr1/README~
+?? chptr1/chapter1_answer file~
+?? chptr2/
+
+/======================================================================================/
+
+git diff
+diff --git a/chptr1/README b/chptr1/README
+index 0247eeb..e2767c3 100644
+--- a/chptr1/README
++++ b/chptr1/README
+@@ -1 +1,5 @@
+-asdas
++Chapter 1 Summary
++
++Version control allows you to gain access to records of files or a set of
++files. This chapter teaches you the basics of using and installing git.You can 
++create your own git and set the username and email of your git. 
+
+/======================================================================================/
+
+git diff --staged
+diff --git a/CONTRIBUTING.md b/CONTRIBUTING.md
+new file mode 100644
+index 0000000..026b8af
+--- /dev/null
++++ b/CONTRIBUTING.md
+@@ -0,0 +1 @@
++pew pew
+diff --git a/README b/README
+new file mode 100644
+index 0000000..56266d3
+--- /dev/null
++++ b/README
+@@ -0,0 +1 @@
++My Project
+
+/======================================================================================/
+
+git add CONTRIBUTING.md
+echo 'test' >> CONTRIBUTING.md
+git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   CONTRIBUTING.md
+	new file:   README
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   CONTRIBUTING.md
+	modified:   chptr1/README
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	chptr1/README~
+	chptr1/chapter1_answer file~
+	chptr2/
+
+/======================================================================================/
+
+git diff
+diff --git a/CONTRIBUTING.md b/CONTRIBUTING.md
+index 026b8af..5886d7a 100644
+--- a/CONTRIBUTING.md
++++ b/CONTRIBUTING.md
+@@ -1 +1,2 @@
+ pew pew
++test
+diff --git a/chptr1/README b/chptr1/README
+index 0247eeb..e2767c3 100644
+--- a/chptr1/README
++++ b/chptr1/README
+@@ -1 +1,5 @@
+-asdas
++Chapter 1 Summary
++
++Version control allows you to gain access to records of files or a set of
++files. This chapter teaches you the basics of using and installing git.You can 
++create your own git and set the username and email of your git. 
+
+/======================================================================================/
+
+git commit
+[master 6840b13] commit my life again
+ 2 files changed, 2 insertions(+)
+ create mode 100644 CONTRIBUTING.md
+ create mode 100644 README
+
+
+/======================================================================================/
+
+git clone https://github.com/fatestriker/bacalso_githubpractice.git
+
+/======================================================================================/
+
+git log
+commit 7c6018b93236a2e6535cb712252a1c7fe0be354c
+Author: fatestriker <kurtsultan88@gmail.com>
+Date:   Thu Jan 29 11:18:35 2015 +0800
+
+    README
+
+commit d6d25614ea05cdd232ff38eaa99e235baf1b6a0d
+Author: fatestriker <kurtsultan88@gmail.com>
+Date:   Thu Jan 29 11:07:09 2015 +0800
+
+    "First Commitment In Life"
+
+/======================================================================================/
+
+git diff --cached
+diff --git a/CONTRIBUTING.md b/CONTRIBUTING.md
+new file mode 100644
+index 0000000..026b8af
+--- /dev/null
++++ b/CONTRIBUTING.md
+@@ -0,0 +1 @@
++pew pew
+diff --git a/README b/README
+new file mode 100644
+index 0000000..56266d3
+--- /dev/null
++++ b/README
+@@ -0,0 +1 @@
++My Project
+
+/======================================================================================/
+
+git commit -m 'initial commit'
+git add forgotten_file
+git commit --amend
+
+/======================================================================================/
+
+git remote -v
+origin	https://github.com/fatestriker/bacalso_githubpractice.git (fetch)
+origin	https://github.com/fatestriker/bacalso_githubpractice.git (push)
+
+/======================================================================================/
+
+git tag v1.4 -m 'my version'
+git tag
+v1.4
+
+/======================================================================================/
+
+git show v1.4
+tag v1.4
+Tagger: fatestriker <kurtsultan88@gmail.com>
+Date:   Tue Feb 3 10:22:12 2015 +0800
+
+my version
+
+commit 6840b13ca85e4c3f881c6204f50ea53b81247971
+Author: fatestriker <kurtsultan88@gmail.com>
+Date:   Tue Feb 3 10:12:03 2015 +0800
+
+    commit my life again
+
+diff --git a/CONTRIBUTING.md b/CONTRIBUTING.md
+new file mode 100644
+index 0000000..026b8af
+--- /dev/null
++++ b/CONTRIBUTING.md
+@@ -0,0 +1 @@
++pew pew
+diff --git a/README b/README
+new file mode 100644
+index 0000000..56266d3
+--- /dev/null
++++ b/README
+@@ -0,0 +1 @@
++My Project
+
+/======================================================================================/
+
+git tag v1.4-lw
+git tag
+v1.4
+v1.4-lw
+
+/======================================================================================/
+
+git show v1.4-lw
+commit 6840b13ca85e4c3f881c6204f50ea53b81247971
+Author: fatestriker <kurtsultan88@gmail.com>
+Date:   Tue Feb 3 10:12:03 2015 +0800
+
+    commit my life again
+
+diff --git a/CONTRIBUTING.md b/CONTRIBUTING.md
+new file mode 100644
+index 0000000..026b8af
+--- /dev/null
++++ b/CONTRIBUTING.md
+@@ -0,0 +1 @@
++pew pew
+diff --git a/README b/README
+new file mode 100644
+index 0000000..56266d3
+--- /dev/null
++++ b/README
+@@ -0,0 +1 @@
++My Project
+
+/======================================================================================/
+
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.ci commit
+git config --global alias.st statu
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
