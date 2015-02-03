@@ -1,7 +1,0 @@
-
-sudo apt-get install git
-
-git config --globa user.name fatestriker
-git config --globa user.email kurtsultan88@gmail.com
-
-
