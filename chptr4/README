@@ -1,0 +1,10 @@
+
+Chapter 4 Summary
+
+Chapter 4 discusses about how to put you git onto a server shuch as servers on apache. This chapter teaches us on how to make your own server using git but doing this is a hard task. 
+
+Git has four protocols which is Local, HTTP, Secure Shell and Git. Local protocol is a remote repository located on a disk. HTTP protocols are Smart HTTP and Dumb HTTP. Secure Shell is an authenticated network control protocol while Git is a integrated protocol
+
+In order to setup git you need to export repositories into a new one. Then you need to make dedicted loacl SSH keys which are public. Then you authenticate access on the server side. Git Daemon is a good choice since it is fast for unauthenticated access but Smart HTTP, GitWeb and GitLab are also a good choice. 
+
+Git server can also be hosted by third party servers
